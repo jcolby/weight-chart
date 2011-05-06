@@ -2,3 +2,6 @@ WEIGHT-CHART
 ==================
 
 Install Instructions here
+
+* Install Database
+    mysql -u root -p < create_db.sql
