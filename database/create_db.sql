@@ -19,4 +19,16 @@
 
  /* Create database */
 
- CREATE DATABASE weight_chart 
+ CREATE DATABASE weight_chart;
+
+
+ /* Select Database */
+
+ use weight_chart;
+
+ /* Create Database Table */
+
+ CREATE TABLE daily_weight (
+   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+   date DATE NOT NULL,
+   weight INT NOT NULL);
