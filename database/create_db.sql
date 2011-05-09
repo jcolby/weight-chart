@@ -32,3 +32,7 @@
    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
    date DATE NOT NULL,
    weight INT NOT NULL);
+ 
+ /* Create Dedicated Database user */
+
+   GRANT ALL ON weight_chart.* TO 'weight'@'localhost' IDENTIFIED BY 'pass';
