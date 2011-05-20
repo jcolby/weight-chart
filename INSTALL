@@ -3,5 +3,10 @@ WEIGHT-CHART
 
 Install Instructions here
 
+* System Requirements
+  - MySQL
+  - PHP 5.1 or later
+  - jpgraph (http://jpgraph.net)
+
 * Install Database
     mysql -u root -p < create_db.sql
