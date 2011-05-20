@@ -19,10 +19,15 @@
  *                                                                       *
  *************************************************************************/
 
+
 // declare local variables
  $user="weight";
  $password="pass";
  $database="weight_chart";
+
+// Arrays
+ $date = array();
+ $weight = array();
 
 // open connection to database
  $link = mysql_connect("localhost",$user,$password);
@@ -46,15 +51,15 @@
   $i=0;
 
   while ($i < $num) {
-    $date=mysql_result($result,$i,"date");
-    $weight=mysql_result($result,$i,"weight");
-    echo "<b> i: </b> $i <b> Date: </b> $date <b> Weight: </b> $weight <BR>\n";
+    $date[]=mysql_result($result,$i,"date");
+    $weight[]=mysql_result($result,$i,"weight");
+    echo "<b> i: </b> $i <b> Date: </b> $date[$i] <b> Weight: </b> $weight[$i] <BR>\n";
     $i++;
   }
-
 
 // close connection to database
  mysql_close ($link);
 
 ?>
 
+<IMG SRC="http://localhost/chart.php">
