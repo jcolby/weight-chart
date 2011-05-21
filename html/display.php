@@ -51,7 +51,12 @@
   $i=0;
 
   while ($i < $num) {
-    $date[]=mysql_result($result,$i,"date");
+
+    // create a new DateTime object containing date in the format need by MySQL
+    $formattedDate = new DateTime (mysql_result($result,$i,"date")); 
+
+    // convert date to (m)onth-(d)ay format and store in $date array
+    $date[]=$formattedDate->format('m-d');
     $weight[]=mysql_result($result,$i,"weight");
     echo "<b> i: </b> $i <b> Date: </b> $date[$i] <b> Weight: </b> $weight[$i] <BR>\n";
     $i++;
