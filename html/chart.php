@@ -22,18 +22,10 @@
 // Include
  require_once('jpgraph/jpgraph.php');
  require_once ('jpgraph/jpgraph_line.php');
+ require_once ('config.php');
 
 // Width and height of the graph
 $width = 600; $height = 200;
-
-// Database user
-$user="weight";
-
-// Database Pass
-$password="pass";
-
-// Database Name
-$database="weight_chart";
 
 // Arrays to hold query results
 $date = array();

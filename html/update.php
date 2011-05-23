@@ -19,10 +19,9 @@
  *                                                                       *
  *************************************************************************/
 
-// declare local variables
- $user="weight";
- $password="pass";
- $database="weight_chart";
+require_once ('./config.php');
+
+
 
 // variables passed in from index.html
  $date = $_POST['date'];
