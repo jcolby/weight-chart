@@ -19,26 +19,20 @@
  *                                                                       *
  *************************************************************************/
 
-require_once ('config.php');
+#require_once ('config.php');
+require_once ('inc/class-dbBase.php');
 
 // Arrays
  $date = array();
  $weight = array();
 
 // open connection to database
- $link = mysql_connect("localhost",$user,$password);
- if (!$link) {
-   die('Could not connect: ' . mysql_error());
- }
-
- $db_selected = mysql_select_db($database, $link);
- if (!$db_selected) {
-   die ('Can\'t use database : ' . mysql_error());
-  }
+$db = new dbBase();
+$link = $db->connect();
 
 // Pull data from DB
   $query="SELECT date,weight from daily_weight";
-  $result=mysql_query($query);
+  $result=mysql_query($query,$link);
   $num=mysql_num_rows($result);
   echo "$num";
 

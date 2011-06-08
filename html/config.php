@@ -24,6 +24,7 @@
 $user="weight";			// Database user name
 $password="pass";		// Database user password
 $database="weight_chart";	// Database name
+$host="localhost";		// Database host
 
 
 ?>

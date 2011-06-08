@@ -24,7 +24,10 @@ class dbBase
 {
   protected  $DB_user;
   protected  $DB_password;
+  protected  $DB_host;
   protected  $DB_database;
+
+  public $DB_link;
 
   public function connect () 
   {
@@ -32,10 +35,19 @@ class dbBase
     $this->DB_user = $user;
     $this->DB_password = $password;
     $this->DB_database = $database;
+    $this->DB_host = $host;
 
-    echo $this->DB_user;
-    echo $this->DB_password;
-    echo $this->DB_database;
+    $this->DB_link = mysql_connect ($this->DB_host, $this->DB_user, $this->DB_password, true);
+    if (!$this->DB_link) {
+      die('Could not connect: ' . mysql_error());
+    }
+
+    $db_selected = mysql_select_db ($this->DB_database, $this->DB_link);
+    if (!$db_selected) {
+      die('Could not connect: ' . mysql_error());
+    }
+
+    return $this->DB_link;
   }
 }
 
