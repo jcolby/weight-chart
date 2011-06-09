@@ -47,7 +47,7 @@ class dbBase
       die('Could not connect: ' . mysql_error());
     }
 
-    return $this->DB_link;
+    //return $this->DB_link;
   }
 }
 

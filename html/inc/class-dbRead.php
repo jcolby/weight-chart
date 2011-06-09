@@ -19,29 +19,39 @@
  *                                                                       *
  *************************************************************************/
 
-require_once ('inc/class-dbRead.php');
+require_once 'class-dbBase.php';
 
-// Arrays
- $date = array();
- $weight = array();
+class dbRead extends dbBase
+{
+  
+  private $query="SELECT date from daily_weight";
+  private $num;
+  private $result;
+  private $i=0;
 
-// open connection to database
-$db = new dbRead();
-$db->connect();
-$date = $db->getDate();
+  public function getDate ()
+  {
+    $this->result=mysql_query($this->query,$this->DB_link);
+    $this->num=mysql_num_rows($this->result);
+    
+    while ($this->i < $this->num)
+    {
+      // create a new DateTime object containing date in the format need by MySQL
+      $formattedDate = new DateTime (mysql_result($this->result,$this->i,"date"));
+      // convert date to (m)onth-(d)ay format and store in $date array
+      $date[]=$formattedDate->format('m-d');
+      $this->i++;
+    }
 
+    return $date;
 
-// Display Data
-  echo "<b><center>Database Output</center></b><br><br>";
-  $i=0;
-
-  while ($i < $db->getNumRecords()) {
-    #$weight[]=mysql_result($result,$i,"weight");
-    #echo "<b> i: </b> $i <b> Date: </b> $date[$i] <b> Weight: </b> $weight[$i] <BR>\n";
-    echo "<b> i: </b> $i <b> Date: </b> $date[$i]  <BR>\n";
-    $i++;
   }
 
-?>
+  public function getNumRecords () 
+  {
 
-<IMG SRC="http://localhost/chart.php">
+    return $this->num;
+
+  }
+
+}

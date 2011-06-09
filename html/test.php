@@ -1,9 +1,9 @@
 <?php
 
-require_once ('inc/class-dbBase.php');
+require_once ('inc/class-dbRead.php');
 
-$test = new dbBase();
-echo $test->connect();
-
+$test = new dbRead();
+$test->connect();
+$test->getDate();
 
 ?>
