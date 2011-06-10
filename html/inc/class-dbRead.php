@@ -24,13 +24,15 @@ require_once 'class-dbBase.php';
 class dbRead extends dbBase
 {
   
-  private $query="SELECT date from daily_weight";
+  private $query;
   private $num;
   private $result;
   private $i=0;
 
   public function getDate ()
   {
+
+    $this->query="SELECT date from daily_weight";
     $this->result=mysql_query($this->query,$this->DB_link);
     $this->num=mysql_num_rows($this->result);
     
@@ -43,6 +45,7 @@ class dbRead extends dbBase
       $this->i++;
     }
 
+    $this->i = 0;  //Reset Counter as it is used in other methods
     return $date;
 
   }
@@ -52,6 +55,22 @@ class dbRead extends dbBase
 
     return $this->num;
 
+  }
+
+  public function getWeight ()
+  {
+
+    $this->query="SELECT weight from daily_weight";
+    $this->result=mysql_query($this->query,$this->DB_link);
+    $this->num=mysql_num_rows($this->result);
+    while ( $this->i < $this->num ) 
+    {
+       $weight[]=mysql_result($this->result,$this->i,"weight");
+       $this->i++;
+    }
+
+    $this->i=0; //Reset counter as it is used by other methods
+    return $weight;
   }
 
 }

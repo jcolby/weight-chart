@@ -29,6 +29,7 @@ require_once ('inc/class-dbRead.php');
 $db = new dbRead();
 $db->connect();
 $date = $db->getDate();
+$weight = $db->getWeight();
 
 
 // Display Data
@@ -36,9 +37,8 @@ $date = $db->getDate();
   $i=0;
 
   while ($i < $db->getNumRecords()) {
-    #$weight[]=mysql_result($result,$i,"weight");
-    #echo "<b> i: </b> $i <b> Date: </b> $date[$i] <b> Weight: </b> $weight[$i] <BR>\n";
-    echo "<b> i: </b> $i <b> Date: </b> $date[$i]  <BR>\n";
+    echo "<b> i: </b> $i <b> Date: </b> $date[$i] <b> Weight: </b> $weight[$i] <BR>\n";
+    #echo "<b> i: </b> $i <b> Date: </b> $date[$i]  <BR>\n";
     $i++;
   }
 
