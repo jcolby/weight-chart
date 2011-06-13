@@ -33,7 +33,7 @@ class dbRead extends dbBase
   {
 
     $this->query="SELECT date from daily_weight";
-    $this->result=mysql_query($this->query,$this->DB_link);
+    $this->result=$this->runQuery($this->DB_link, $this->query );
     $this->num=mysql_num_rows($this->result);
     
     while ($this->i < $this->num)
@@ -45,7 +45,7 @@ class dbRead extends dbBase
       $this->i++;
     }
 
-    $this->i = 0;  //Reset Counter as it is used in other methods
+    $this->i = 0;  //Reset Counter as it is used by other methods
     return $date;
 
   }
@@ -61,7 +61,7 @@ class dbRead extends dbBase
   {
 
     $this->query="SELECT weight from daily_weight";
-    $this->result=mysql_query($this->query,$this->DB_link);
+    $this->result=$this->runQuery($this->DB_link, $this->query);
     $this->num=mysql_num_rows($this->result);
     while ( $this->i < $this->num ) 
     {

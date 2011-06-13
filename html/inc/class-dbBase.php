@@ -49,7 +49,15 @@ class dbBase
 
     //return $this->DB_link;
   }
+
+  protected function runQuery ($link, $query)
+  {
+    return mysql_query($query,$link);
+  }
+
 }
+
+
 
 
 
