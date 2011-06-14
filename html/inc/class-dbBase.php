@@ -26,6 +26,7 @@ class dbBase
   protected  $DB_password;
   protected  $DB_host;
   protected  $DB_database;
+  protected  $DB_query;
 
   public $DB_link;
 

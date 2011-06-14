@@ -1,30 +1,10 @@
 <?php
 
-/*************************************************************************
- *                                                                       *
- *  Copyright (C) 2011 by James Colby <jcolby@gmail.com>                 *
- *                                                                       *
- *  This program is free software: you can redistribute it and/or modify *
- *  it under the terms of the GNU General Public License as published by *
- *  the Free Software Foundation, either version 3 of the License, or    *
- *  at your option) any later version.                                   *
- *                                                                       *
- *  This program is distributed in the hope that it will be useful,      *
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of       *
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the        *
- *  GNU General Public License for more details.                         *
- *                                                                       *
- *  You should have received a copy of the GNU General Public License    *
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
- *                                                                       *
- *************************************************************************/
-
 require_once 'class-dbBase.php';
 
 class dbRead extends dbBase
 {
   
-  private $query;
   private $num;
   private $result;
   private $i=0;
@@ -32,8 +12,8 @@ class dbRead extends dbBase
   public function getDate ()
   {
 
-    $this->query="SELECT date from daily_weight";
-    $this->result=$this->runQuery($this->DB_link, $this->query );
+    $this->DB_query ="SELECT date from daily_weight";
+    $this->result=$this->runQuery($this->DB_link, $this->DB_query );
     $this->num=mysql_num_rows($this->result);
     
     while ($this->i < $this->num)
@@ -74,3 +54,5 @@ class dbRead extends dbBase
   }
 
 }
+
+?>

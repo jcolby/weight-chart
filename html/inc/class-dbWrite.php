@@ -18,19 +18,18 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *                                                                       *
  *************************************************************************/
-require_once ('inc/class-dbWrite.php');
 
 
+require_once 'class-dbBase.php';
 
-// variables passed in from index.html
- $date = $_POST['date'];
- $weight = $_POST['weight'];
+class dbWrite extends dbBase
+{
+  public function update ($date, $weight)
+  {
 
-$db = new dbWrite;
-$db->connect();
-$db->update($date, $weight);
+    echo "Date = ". $date . "  Weight = " . $weight;
+    $this->DB_query = "INSERT INTO daily_weight VALUE ('','$date',$weight)";
+    $this->result=$this->runQuery($this->DB_link, $this->DB_query);
+  }
 
-
-
-?>
-
+}
