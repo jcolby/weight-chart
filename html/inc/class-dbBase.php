@@ -22,13 +22,13 @@
 
 class dbBase 
 {
-  protected  $DB_user;
-  protected  $DB_password;
-  protected  $DB_host;
-  protected  $DB_database;
-  protected  $DB_query;
+  protected  $DB_user="user";
+  protected  $DB_password="password";
+  protected  $DB_host="hostname";
+  protected  $DB_database="db";
+  protected  $DB_query="query";
 
-  public $DB_link;
+  public $DB_link="link";
 
   public function connect () 
   {

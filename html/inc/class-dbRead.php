@@ -5,8 +5,8 @@ require_once 'class-dbBase.php';
 class dbRead extends dbBase
 {
   
-  private $num;
-  private $result;
+  private $num=0;
+  private $result=0;
   private $i=0;
 
   public function getDate ()
