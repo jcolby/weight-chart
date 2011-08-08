@@ -19,7 +19,7 @@
  *                                                                       *
  *************************************************************************/
 
-require_once ('inc/class-dbRead.php');
+require_once ('class-dbRead.php');
 
 // Arrays
  $date = array();

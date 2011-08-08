@@ -32,7 +32,7 @@ class dbBase
 
   public function connect () 
   {
-    require_once '/home/jcolby/src/weight-chart/html/config.php';
+    require_once 'config.php';
     $this->DB_user = $user;
     $this->DB_password = $password;
     $this->DB_database = $database;
