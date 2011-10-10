@@ -18,7 +18,8 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.*
  *                                                                       *
  *************************************************************************/
-
+ 
+set_include_path (get_include_path() . ":.:inc" );
 require_once ('class-dbRead.php');
 
 // Arrays
@@ -41,7 +42,6 @@ $weight = $db->getWeight();
     #echo "<b> i: </b> $i <b> Date: </b> $date[$i]  <BR>\n";
     $i++;
   }
-
+  echo "$web_path";
 ?>
-
-<IMG SRC="http://localhost/chart.php">
+<IMG SRC="http://chart.php">

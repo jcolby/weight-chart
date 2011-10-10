@@ -32,7 +32,8 @@ class dbBase
 
   public function connect () 
   {
-    require_once 'config.php';
+    set_include_path (get_include_path() . ":" . "." . ":" . "inc" );
+    require_once ('config.php');
     $this->DB_user = $user;
     $this->DB_password = $password;
     $this->DB_database = $database;
@@ -57,8 +58,3 @@ class dbBase
   }
 
 }
-
-
-
-
-

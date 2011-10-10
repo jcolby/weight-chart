@@ -1,7 +1,7 @@
 <?php
 
+set_include_path (get_include_path() . ":" . "." . ":" . "inc" );
 require_once 'class-dbBase.php';
-
 class dbRead extends dbBase
 {
   

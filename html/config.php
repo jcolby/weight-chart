@@ -25,6 +25,7 @@ $user="weight";			// Database user name
 $password="pass";		// Database user password
 $database="weight_chart";	// Database name
 $host="localhost";		// Database host
+$web_path="/test"; 		// Update this if the site is not intsalled in a docroot.
 
 
 ?>
