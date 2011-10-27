@@ -6,7 +6,7 @@ Install Instructions here
 * System Requirements
   - MySQL
   - PHP 5.1 or later
-  - jpgraph (http://jpgraph.net)
+  - jpgraph (http://jpgraph.net) 3.05 or later
 
 * Install Database
     mysql -u root -p < create_db.sql
